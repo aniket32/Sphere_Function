@@ -13,8 +13,10 @@ def fitness_function( func_no, x ):
             sum = sum + m.pow(x[i],2)
 
     # WRITE A NEW FUNCTION HERE
-	# elif func_no == 2:
-	#
+    # elif func_no == 2:
+    #     sum = 0.0
+    #     for k in y:
+    #         sum = sum + m.pow(y[k], 2)
 
     FEs = FEs + 1
     return sum
@@ -57,8 +59,7 @@ print (fitness_function(1,x))
 N = 50				# NUMBER OF SOLUTIONS
 # --->  X = ?		# 2D LIST HOLDING ALL N SOLUTIONS
 # X SHOULD BE (N x D)
-y = np.random.uniform(low=lower_bound, high=upper_bound, size=(N,D))
-
+print("\n")
 
 
 ###############################
@@ -66,24 +67,31 @@ y = np.random.uniform(low=lower_bound, high=upper_bound, size=(N,D))
 ###############################
 fitness = [None]*N	# FITNESS VALUES
 
+print ("Solution for the second problem")
+y = np.random.uniform(low=lower_bound, high=upper_bound, size=(N,D))
+fitness_variable = []
+for k in y:
+    fitness_variable.append(fitness_function(1,k))
+    print(k)
+
+
+print (len(fitness_variable))
+
+minimum = min(fitness_variable)
 # --->
 
 # ---> 
 
-
-
-
-
 ###################################
 # FIND THE INDEX OF BEST SOLUTION #
 ###################################
-# ---> best_index = ?
+best_index = fitness_variable.index(minimum)
 
+print(best_index)
 
 #######################################################################
 # DISPLAY ALL FITNESS VALUES, THE BEST SOLUTION, AND THE BEST FITNESS #
 #######################################################################
-# ---> print('Fitness values for all solutions: \n', ?, '\n')
-# ---> print('Best solution: \n', ?, '\n')
-# ---> print('Best fitness value: ', ?)
-# Testing
+print('Fitness values for all solutions: \n', fitness_variable, '\n')
+print('Best solution: \n', y[best_index], '\n')
+print('Best fitness value: ', minimum)
