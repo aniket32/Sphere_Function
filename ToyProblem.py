@@ -58,6 +58,10 @@ N = 50				# NUMBER OF SOLUTIONS
 # --->  X = ?		# 2D LIST HOLDING ALL N SOLUTIONS
 # X SHOULD BE (N x D)
 y = np.random.uniform(low=lower_bound, high=upper_bound, size=(N,D))
+print(y)
+print(y)
+print(y)
+
 
 ###############################
 # EVALUATE THE SAMPLE SOLUTON #
@@ -67,6 +71,9 @@ fitness = [None]*N	# FITNESS VALUES
 # --->
 
 # ---> 
+
+
+
 
 
 ###################################
@@ -81,3 +88,4 @@ fitness = [None]*N	# FITNESS VALUES
 # ---> print('Fitness values for all solutions: \n', ?, '\n')
 # ---> print('Best solution: \n', ?, '\n')
 # ---> print('Best fitness value: ', ?)
+# Testing
