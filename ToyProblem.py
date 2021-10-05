@@ -2,15 +2,16 @@ import numpy as np
 import math as m
 from random import random
 
+
 # FITNESS FUNCTION
-def fitness_function( func_no, x ):
+def fitness_function(func_no, x):
     global FEs
 
     # SPHERE FUNCTION
     if func_no == 1:
         sum = 0.0
-        for i in range( len(x) ):
-            sum = sum + m.pow(x[i],2)
+        for i in range(len(x)):
+            sum = sum + m.pow(x[i], 2)
 
     # WRITE A NEW FUNCTION HERE
     # elif func_no == 2:
@@ -22,60 +23,60 @@ def fitness_function( func_no, x ):
     return sum
 
 
-FEs = 0		# COUNTING THE NUMBER OF TIMES FITNESS FUNCTION IS CALLED
-D   = 30	# ASSUME THE DIMENSIONALITY OF THE PROBLEM TO BE 30
-
+FEs = 0  # COUNTING THE NUMBER OF TIMES FITNESS FUNCTION IS CALLED
+D = 30  # ASSUME THE DIMENSIONALITY OF THE PROBLEM TO BE 30
 
 ###############
 # CONSTRAINTS #
 ###############
 lower_bound = -5.12
-upper_bound =  5.12
-
+upper_bound = 5.12
 
 ############################
 # GENERATE RANDOM SOLUTION #
 ############################
-x = [None] * D 		# A SOLUTION
+x = [None] * D  # A SOLUTION
 
 # INITIALISE THE VALUES FOR x
 # --->
-x = np.random.uniform( low= lower_bound, high=upper_bound, size=(D))
+x = np.random.uniform(low=lower_bound, high=upper_bound, size=(D))
 
 # DISPLAY THE SAMPLE SOLUTION
-print ( 'x: \n', x, '\n')
-
+print('x: \n', x, '\n')
 
 ###########################################
 # EVALUATE AND DISPLAY THE SAMPLE SOLUTON #
 ###########################################
 # --->
-print (fitness_function(1,x))
-
+print(fitness_function(1, x))
 
 ###########################################
 # GENERATE 50 SOLUTIONS AND FIND THE BEST #
 ###########################################
-N = 50				# NUMBER OF SOLUTIONS
+N = 50  # NUMBER OF SOLUTIONS
 # --->  X = ?		# 2D LIST HOLDING ALL N SOLUTIONS
 # X SHOULD BE (N x D)
 print("\n")
 
-
 ###############################
 # EVALUATE THE SAMPLE SOLUTON #
 ###############################
-fitness = [None]*N	# FITNESS VALUES
+fitness = [None] * N  # FITNESS VALUES
 
-print ("Solution for the second problem")
-y = np.random.uniform(low=lower_bound, high=upper_bound, size=(N,D))
+print("Solution for the second problem")
+y = np.random.uniform(low=lower_bound, high=upper_bound, size=(N, D))
 fitness_variable = []
+
+# For loop to store all the fitness variable in an array
+print("Printing all Solutions for the second problem")
 for k in y:
-    fitness_variable.append(fitness_function(1,k))
+    fitness_variable.append(fitness_function(1, k))
     print(k)
 
 print("Total number of fitness variables")
-print (len(fitness_variable))
+print(len(fitness_variable))
+
+# Finding the best fitness variable
 
 minimum = min(fitness_variable)
 # --->
@@ -86,7 +87,6 @@ minimum = min(fitness_variable)
 # FIND THE INDEX OF BEST SOLUTION #
 ###################################
 best_index = fitness_variable.index(minimum)
-
 
 #######################################################################
 # DISPLAY ALL FITNESS VALUES, THE BEST SOLUTION, AND THE BEST FITNESS #
