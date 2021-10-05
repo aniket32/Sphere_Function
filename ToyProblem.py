@@ -74,7 +74,7 @@ for k in y:
     fitness_variable.append(fitness_function(1,k))
     print(k)
 
-
+print("Total number of fitness variables")
 print (len(fitness_variable))
 
 minimum = min(fitness_variable)
@@ -87,7 +87,6 @@ minimum = min(fitness_variable)
 ###################################
 best_index = fitness_variable.index(minimum)
 
-print(best_index)
 
 #######################################################################
 # DISPLAY ALL FITNESS VALUES, THE BEST SOLUTION, AND THE BEST FITNESS #
