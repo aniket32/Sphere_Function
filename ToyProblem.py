@@ -80,10 +80,8 @@ print(len(fitness_variable))
 
 minimum = min(fitness_variable)
 
-print("HEllO")
-
-
 # --->
+
 # ---> 
 
 ###################################
