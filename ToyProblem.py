@@ -79,8 +79,11 @@ print(len(fitness_variable))
 # Finding the best fitness variable
 
 minimum = min(fitness_variable)
-# --->
 
+print("HEllO")
+
+
+# --->
 # ---> 
 
 ###################################
