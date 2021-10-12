@@ -14,10 +14,10 @@ def fitness_function(func_no, x):
             sum = sum + m.pow(x[i], 2)
 
     # WRITE A NEW FUNCTION HERE
-    # elif func_no == 2:
-    #     sum = 0.0
-    #     for k in y:
-    #         sum = sum + m.pow(y[k], 2)
+    elif func_no == 2:
+        sum = 10 * len(x)
+        for i in range(len(x)):
+            sum += x[i] ** 2 - (10 * m.cos(2 * m.pi * x[i]))
 
     FEs = FEs + 1
     return sum
@@ -70,7 +70,7 @@ fitness_variable = []
 # For loop to store all the fitness variable in an array
 print("Printing all Solutions for the second problem")
 for k in y:
-    fitness_variable.append(fitness_function(1, k))
+    fitness_variable.append(fitness_function(2, k))
     print(k)
 
 print("Total number of fitness variables")
