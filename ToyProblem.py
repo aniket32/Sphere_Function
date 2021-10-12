@@ -13,7 +13,7 @@ def fitness_function(func_no, x):
         for i in range(len(x)):
             sum = sum + m.pow(x[i], 2)
 
-    # WRITE A NEW FUNCTION HERE
+    # RASTRIGEN FUNCTION
     elif func_no == 2:
         sum = 10 * len(x)
         for i in range(len(x)):
